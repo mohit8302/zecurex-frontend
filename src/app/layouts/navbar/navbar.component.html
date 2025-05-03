@@ -1,0 +1,19 @@
+<nav class="navbar">
+  <div class="navbar-container">
+    <div class="logo">
+      <img src="assets/images/zec-logo.png" alt="ZecurX" class="logo" />
+    </div>
+
+    <button class="menu-toggle" (click)="toggleMenu()">☰</button>
+
+    <ul class="nav-links" [class.active]="isMenuOpen">
+      <li><a routerLink="/">Home</a></li>
+      <li><a routerLink="/courses">Courses</a></li>
+      <li><a routerLink="/workshops">Workshops & CTFs</a></li>
+      <li><a routerLink="/certifications">Certifications</a></li>
+      <li><a routerLink="/about">About Us</a></li>
+    </ul>
+
+    <a class="cta-button" routerLink="/join">Join Now</a>
+  </div>
+</nav>

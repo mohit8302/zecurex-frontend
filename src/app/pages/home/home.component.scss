@@ -1,0 +1,109 @@
+.hero {
+  background: radial-gradient(ellipse at center, #0f172a 0%, #000 100%);
+  color: white;
+  text-align: center;
+  padding: 5rem 2rem;
+  width: 100%;
+
+  .content {
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+
+  h1 {
+    font-size: 3rem;
+    font-weight: 800;
+    margin-bottom: 1rem;
+  }
+
+  p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+  }
+
+  .buttons {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 3rem;
+
+    a {
+      padding: 0.8rem 1.6rem;
+      font-weight: 600;
+      border-radius: 8px;
+      text-decoration: none;
+      transition: 0.3s ease;
+    }
+
+    .primary {
+      background-color: #2563eb;
+      color: white;
+
+      &:hover {
+        background-color: #1d4ed8;
+      }
+    }
+
+    .outline {
+      border: 2px solid white;
+      color: white;
+
+      &:hover {
+        background-color: white;
+        color: #0f172a;
+      }
+    }
+  }
+
+  .stats {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-bottom: 3rem;
+    flex-wrap: wrap;
+
+    .stat-box {
+      background-color: #1e293b;
+      padding: 1.5rem 2rem;
+      border-radius: 16px;
+      min-width: 200px;
+
+      h2 {
+        font-size: 2rem;
+        font-weight: bold;
+      }
+
+      p {
+        font-size: 1rem;
+        margin-top: 0.5rem;
+        color: #cbd5e1;
+      }
+    }
+  }
+
+  .trusted-by {
+    p {
+      font-size: 1rem;
+      margin-bottom: 1rem;
+    }
+
+    .logos {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      flex-wrap: wrap;
+
+      img {
+        height: 40px;
+        filter: brightness(0) invert(1);
+      }
+      .highlight {
+        font-weight: bold;
+        color: #007bff; /* Highlight color */
+        font-size: 1.2rem;
+        text-transform: uppercase;
+        padding: 5px;
+      }
+    }
+  }
+}
