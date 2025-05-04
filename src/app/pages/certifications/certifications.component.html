@@ -1,21 +1,57 @@
 <section class="certifications">
   <div class="certifications__content">
-    <h1>Recognized Certifications by ZecurX</h1>
+    <h1>🎓 ZecurX Certificate Portal</h1>
     <p>
-      Get industry-validated certifications with license numbers for
-      verification.
+      Instantly verify the authenticity of a ZecurX certificate or generate one
+      for a student.
     </p>
 
     <div class="cert-grid">
-      <div class="cert-card">
-        <img src="/assets/img/sample-cert.jpg" alt="Sample Certificate" />
-        <p>Preview of zxCEH Certificate</p>
+      <!-- Verify Certificate Box -->
+      <div class="cert-card wide">
+        <h2>🔍 Verify Certificate</h2>
+        <input
+          type="text"
+          [(ngModel)]="licenseNumber"
+          placeholder="Enter Certificate Number (e.g. ZXC2025000001)"
+        />
+        <button class="primary" (click)="verifyCertificate()">Verify</button>
+        <p *ngIf="errorMessage" class="error">{{ errorMessage }}</p>
       </div>
 
-      <div class="lookup-box">
-        <h2>Verify a Certificate</h2>
-        <input type="text" placeholder="Enter License Number" />
-        <button class="primary">Verify</button>
+      <!-- Generate Certificate Box -->
+      <div class="cert-card wide">
+        <h2>⚙️ Generate Certificate</h2>
+        <input
+          type="text"
+          [(ngModel)]="name"
+          placeholder="Enter Student Full Name"
+        />
+        <input
+          type="text"
+          [(ngModel)]="courseName"
+          placeholder="Enter Course Title"
+        />
+        <button class="primary" (click)="generateCertificate()">
+          Generate
+        </button>
+        <p *ngIf="generateError" class="error">{{ generateError }}</p>
+      </div>
+    </div>
+
+    <!-- Certificate Details Display -->
+    <div *ngIf="certificateDetails" class="certificate-details">
+      <h3>✅ Certificate Verified</h3>
+      <div class="details-box">
+        <p><strong>👤 Student:</strong> {{ certificateDetails.studentName }}</p>
+        <p><strong>🎓 Course:</strong> {{ certificateDetails.courseName }}</p>
+        <p>
+          <strong>📅 Issued:</strong> {{ certificateDetails.issuedAt | date }}
+        </p>
+        <p>
+          <strong>🔐 Certificate No:</strong>
+          {{ certificateDetails.certificateNumber }}
+        </p>
       </div>
     </div>
   </div>

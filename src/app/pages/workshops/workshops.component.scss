@@ -59,18 +59,19 @@
       display: flex;
       justify-content: center;
       flex-wrap: wrap;
-      gap: 1.5rem;
+      gap: 2rem;
 
       img {
-        width: 200px;
+        width: 300px; // ⬆ increased from 200px
         height: auto;
-        border-radius: 10px;
-        box-shadow: 0 0 10px rgba(255, 255, 255, 0.15);
-        transition: transform 0.3s;
+        border-radius: 12px;
+        box-shadow: 0 0 12px rgba(255, 255, 255, 0.2);
+        transition: transform 0.3s ease, box-shadow 0.3s;
       }
 
       img:hover {
-        transform: scale(1.05);
+        transform: scale(1.07);
+        box-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
       }
     }
   }

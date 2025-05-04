@@ -1,91 +1,105 @@
 .certifications {
-  background: radial-gradient(ellipse at center, #0f172a 0%, #000 100%);
+  background: linear-gradient(to bottom, #0f172a, #020617);
   color: white;
-  padding: 5rem 2rem;
-  width: 100%;
+  padding: 4rem 2rem;
+  min-height: 100vh;
 
   &__content {
-    max-width: 1000px;
-    margin: 0 auto;
+    max-width: 960px;
+    margin: auto;
     text-align: center;
 
     h1 {
       font-size: 2.5rem;
-      font-weight: 700;
+      font-weight: bold;
       margin-bottom: 1rem;
     }
 
     p {
       font-size: 1.1rem;
       color: #cbd5e1;
-      margin-bottom: 2.5rem;
+      margin-bottom: 3rem;
     }
   }
 
   .cert-grid {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
     gap: 2rem;
+    justify-content: center;
+    margin-bottom: 2.5rem;
   }
 
   .cert-card {
     background-color: #1e293b;
     padding: 2rem;
     border-radius: 12px;
-    width: 260px;
-    box-shadow: 0 0 12px rgba(255, 255, 255, 0.05);
-
-    img {
-      width: 100%;
-      border-radius: 10px;
-      margin-bottom: 1rem;
-    }
-
-    p {
-      font-size: 1rem;
-      color: #e2e8f0;
-    }
-  }
-
-  .lookup-box {
-    background-color: #1e293b;
-    padding: 2rem;
-    border-radius: 12px;
-    width: 300px;
-    box-shadow: 0 0 12px rgba(255, 255, 255, 0.05);
+    box-shadow: 0 0 16px rgba(0, 0, 0, 0.2);
     text-align: left;
 
     h2 {
       color: #60a5fa;
-      font-size: 1.5rem;
+      font-size: 1.4rem;
       margin-bottom: 1rem;
     }
 
     input {
       width: 100%;
-      padding: 0.6rem;
-      border-radius: 6px;
-      border: 1px solid #cbd5e1;
+      padding: 0.8rem;
       margin-bottom: 1rem;
-      background: #0f172a;
-      color: white;
+      border-radius: 8px;
+      background-color: #0f172a;
+      border: 1px solid #64748b;
+      color: #fff;
+      font-size: 1rem;
     }
 
     .primary {
-      display: inline-block;
+      width: 100%;
       background-color: #2563eb;
       color: white;
-      padding: 0.6rem 1.2rem;
-      border-radius: 6px;
-      text-decoration: none;
+      padding: 0.75rem;
+      border-radius: 8px;
+      font-weight: 600;
+      font-size: 1rem;
       border: none;
-      transition: background-color 0.3s ease;
       cursor: pointer;
+      transition: 0.3s ease background-color;
+
+      &:hover {
+        background-color: #1d4ed8;
+      }
     }
 
-    .primary:hover {
-      background-color: #1d4ed8;
+    .error {
+      color: #f87171;
+      font-size: 0.95rem;
+      margin-top: 0.5rem;
+    }
+  }
+
+  .certificate-details {
+    background-color: #0f172a;
+    border: 1px solid #334155;
+    padding: 2rem;
+    border-radius: 12px;
+    max-width: 600px;
+    margin: 0 auto;
+
+    h3 {
+      color: #4ade80;
+      font-size: 1.6rem;
+      margin-bottom: 1rem;
+    }
+
+    .details-box p {
+      font-size: 1.1rem;
+      margin: 0.6rem 0;
+      color: #e2e8f0;
+
+      strong {
+        color: #facc15;
+      }
     }
   }
 }
