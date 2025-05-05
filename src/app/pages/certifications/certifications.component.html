@@ -32,8 +32,13 @@
           [(ngModel)]="courseName"
           placeholder="Enter Course Title"
         />
-        <button class="primary" (click)="generateCertificate()">
-          Generate
+        <button
+          class="primary"
+          (click)="generateCertificate()"
+          [disabled]="isGenerating"
+        >
+          <span *ngIf="!isGenerating">Generate</span>
+          <span *ngIf="isGenerating">Generating...</span>
         </button>
         <p *ngIf="generateError" class="error">{{ generateError }}</p>
       </div>

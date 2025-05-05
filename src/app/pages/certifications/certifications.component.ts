@@ -17,7 +17,7 @@ export class CertificationsComponent {
   name: string = '';
   courseName: string = '';
   generateError = '';
-
+  isGenerating: boolean = false;
   constructor(private certificateService: CertificateService) {}
 
   verifyCertificate() {
@@ -45,6 +45,7 @@ export class CertificationsComponent {
       return;
     }
 
+    this.isGenerating = true; // Start loader
     this.certificateService
       .generateCertificate(this.name, this.courseName)
       .subscribe({
@@ -58,6 +59,9 @@ export class CertificationsComponent {
         },
         error: () => {
           this.generateError = 'Failed to generate certificate.';
+        },
+        complete: () => {
+          this.isGenerating = false; // Stop loader
         },
       });
   }
